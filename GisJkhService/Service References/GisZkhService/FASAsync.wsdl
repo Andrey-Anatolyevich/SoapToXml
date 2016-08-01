@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:base="http://dom.gosuslugi.ru/schema/integration/9.0.2.1/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://dom.gosuslugi.ru/schema/integration/9.0.2.1/fas-service-async/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fas="http://dom.gosuslugi.ru/schema/integration/9.0.2.1/fas/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns="http://www.w3.org/2000/09/xmldsig#" targetNamespace="http://dom.gosuslugi.ru/schema/integration/9.0.2.1/fas-service-async/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema>
+      <xs:import schemaLocation="C:\Users\Андрей\Desktop\hcs-fas-types-9.0.2.1.xsd" namespace="http://dom.gosuslugi.ru/schema/integration/9.0.2.1/fas/" />
+      <xs:import schemaLocation="C:\Users\Андрей\Desktop\hcs-basetypes-9.0.2.1.xsd" namespace="http://dom.gosuslugi.ru/schema/integration/9.0.2.1/" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getStateResult">
+    <wsdl:part name="getStateResult" element="fas:getStateResult" />
+  </wsdl:message>
+  <wsdl:message name="RequestHeader">
+    <wsdl:part name="Header" element="base:ISRequestHeader" />
+  </wsdl:message>
+  <wsdl:message name="getStateRequest">
+    <wsdl:part name="getStateRequest" element="base:getStateRequest" />
+  </wsdl:message>
+  <wsdl:message name="ResultHeader">
+    <wsdl:part name="Header" element="base:ResultHeader" />
+  </wsdl:message>
+  <wsdl:message name="Fault">
+    <wsdl:part name="Fault" element="base:Fault" />
+  </wsdl:message>
+  <wsdl:message name="importRSORequest">
+    <wsdl:part name="importRSORequest" element="fas:importRSORequest" />
+  </wsdl:message>
+  <wsdl:message name="importRSOResult">
+    <wsdl:part name="AckRequest" element="base:AckRequest" />
+  </wsdl:message>
+  <wsdl:portType name="FASPortsTypeAsync">
+    <wsdl:operation name="getState">
+      <wsdl:documentation>Статус операции</wsdl:documentation>
+      <wsdl:input message="tns:getStateRequest" />
+      <wsdl:output message="tns:getStateResult" />
+      <wsdl:fault name="InvalidRequest" message="tns:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="importRSO">
+      <wsdl:documentation>Импорт сведений о лицах, осуществляющих поставки ресурсов.</wsdl:documentation>
+      <wsdl:input message="tns:importRSORequest" />
+      <wsdl:output message="tns:importRSOResult" />
+      <wsdl:fault name="InvalidRequest" message="tns:Fault" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FASBindingAsync" type="tns:FASPortsTypeAsync">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getState">
+      <soap:operation soapAction="urn:getState" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidRequest">
+        <soap:fault use="literal" name="InvalidRequest" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="importRSO">
+      <soap:operation soapAction="urn:importRSO" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidRequest">
+        <soap:fault use="literal" name="InvalidRequest" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FASServiceAsync">
+    <wsdl:port name="FASPortAsync" binding="tns:FASBindingAsync">
+      <soap:address location="http://127.0.0.1:8080//ext-bus-fas-service/services/FASAsync" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

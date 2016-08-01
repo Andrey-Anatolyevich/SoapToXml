@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="42f8ec63-06ad-4f50-b03d-f542264e0ecf" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="C:\Users\Андрей\Desktop\FASAsync.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="hcs-fas-types-9.xsd" MetadataType="Schema" ID="b92263b6-919a-474a-896d-52fe80304dfd" SourceId="1" SourceUrl="file:///C:/Users/Андрей/Desktop/hcs-fas-types-9.0.2.1.xsd" />
+    <MetadataFile FileName="FASAsync.wsdl" MetadataType="Wsdl" ID="447b1997-809e-4513-9ac6-e585ddfc23e7" SourceId="1" SourceUrl="file:///C:/Users/Андрей/Desktop/FASAsync.wsdl" />
+    <MetadataFile FileName="hcs-basetypes-9.xsd" MetadataType="Schema" ID="ea7cbc16-7d44-469e-895d-21ed3651c934" SourceId="1" SourceUrl="file:///C:/Users/Андрей/Desktop/hcs-basetypes-9.0.2.1.xsd" />
+    <MetadataFile FileName="FASAsync.xsd" MetadataType="Schema" ID="c41187db-bdd7-48b4-b1fb-52f392d28bee" SourceId="1" SourceUrl="http://sit02.dom.test.gosuslugi.ru:10082//ext-bus-fas-service/services/FASAsync?xsd=xmldsig-core-schema.xsd" />
+    <MetadataFile FileName="FASAsync1.xsd" MetadataType="Schema" ID="ca588ac2-bc3b-4990-9005-e7f35b3331d5" SourceId="1" SourceUrl="http://sit02.dom.test.gosuslugi.ru:10082//ext-bus-fas-service/services/FASAsync?xsd=hcs-basetypes-9.0.2.1.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
